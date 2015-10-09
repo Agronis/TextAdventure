@@ -11,7 +11,7 @@ public class A {
         String name = scanner.nextLine();
         if (name.isEmpty()) {
             throw new Exception("Account not found.  Terminating connection.");
-        } else {
+        }
             System.out.println("Welcome " + name + ", what may we help you with today?");
             System.out.println("Please make a selection below by either utilizing the number or name.");
             System.out.println("[1] Check Balance [2] Withdrawal Funds [3] Cancel");
@@ -24,7 +24,7 @@ public class A {
                     System.out.println("You don't have much " + name + " but how much would you like?");
 
                     int wd = scanner.nextInt();
-                    if (wd < 100) {
+                    if (wd <= 100) {
                         System.out.println("Request accepted - please take your money.");
                         System.out.println("Your balance is now " + (100 - wd));
                         System.out.println("Have a great day!");
@@ -36,7 +36,7 @@ public class A {
             } else if (request.equals("Cancel") || request.equals("3")) {
                 System.out.println("Terminating Connection.");
                 System.out.println("Have a great day!");
-            }
+
         }
 
     }

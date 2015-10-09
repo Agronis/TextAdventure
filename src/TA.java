@@ -27,7 +27,7 @@ public class TA {
             throw new Exception("Maybe I wasn't clear, just choose a number.");
         }
 
-        System.out.println("Choose a direction fool.");
+        System.out.println("Pick your path to death.");
         System.out.println("[1] Enter the forest.");
         System.out.println("[2] Enter the barren canyon.");
         String area = scanner.nextLine();
