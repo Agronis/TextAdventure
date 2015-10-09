@@ -5,12 +5,15 @@ import java.util.Scanner;
 public class TA {
     public static void run() throws Exception {
 
-        // Introduction
-        System.out.println("Welcome to Ceres");
-        Player player = new Player();
-        player.chooseName();
-        player.chooseWeapon();
-        player.chooseArea();
+        while (true) {
+
+            // Introduction
+            System.out.println("Welcome to Ceres");
+            Player player = new Player();
+            player.chooseName();
+            player.chooseWeapon();
+            player.chooseArea();
+        }
     }
 
     // Initiating a console command & loop.
@@ -21,6 +24,8 @@ public class TA {
             if (s.equals("/help")) {
                 System.out.println("These are your only options.");
                 System.out.println("/help   -  You're here now.");
+            } else if (s.equals("/exit")) {
+                System.exit(0);
             }
             return nextLine();
         } else {
