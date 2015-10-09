@@ -1,18 +1,14 @@
 import java.util.Scanner;
 
-/**
- * Created by Agronis on 10/9/15.
- */
 public class Player {
-    public String name;
-    public String weapon;
-    public String area;
+    String name;
+    String weapon;
+    String area;
 
     // Player states their name.
     public void  chooseName() {
         System.out.println("Hey fucker! What's your name!?");
-        Scanner scanner = new Scanner(System.in);
-        name = scanner.nextLine();
+        name = TA.nextLine();
         System.out.println("Oh, " + name + "? You're the asshole I keep hearing about..");
     }
 
@@ -21,8 +17,7 @@ public class Player {
         System.out.println("Choose a weapon - you'll need it.");
         System.out.println("[1] Pick up a sword.");
         System.out.println("[2] Pick up a mallet.");
-        Scanner scanner = new Scanner(System.in);
-        weapon = scanner.nextLine();
+        weapon = TA.nextLine();
         int weaponNum = Integer.valueOf(weapon);
         if (weaponNum == 1) {
             System.out.println("A little dull but it'll have to do.");
@@ -38,8 +33,7 @@ public class Player {
         System.out.println("Pick your path to death.");
         System.out.println("[1] Enter the forest.");
         System.out.println("[2] Enter the barren canyon.");
-        Scanner scanner = new Scanner(System.in);
-        area = scanner.nextLine();
+        area = TA.nextLine();
         int areaNum = Integer.valueOf(area);
         if (areaNum == 1) {
             System.out.println("Go ahead then you tree hugging hippie!");
