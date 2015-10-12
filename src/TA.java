@@ -3,16 +3,20 @@ import com.sun.tools.doclets.formats.html.SourceToHTMLConverter;
 import java.util.Scanner;
 
 public class TA {
-    public static void run() throws Exception {
+
+    static Player player;
+
+    public static void main(String[] args) throws Exception {
+
+        // Introduction
+        System.out.println("Welcome to Ceres");
+        player = new Player();
 
         while (true) {
-
-            // Introduction
-            System.out.println("Welcome to Ceres");
-            Player player = new Player();
             player.chooseName();
             player.chooseWeapon();
             player.chooseArea();
+            player.findItem("Satchel");
         }
     }
 
@@ -26,6 +30,13 @@ public class TA {
                 System.out.println("/help   -  You're here now.");
             } else if (s.equals("/exit")) {
                 System.exit(0);
+            } else if (s.equals("/inv")) {
+                if (player.items.size() == 1) {
+                    System.out.println("You have no items.");
+                }
+                for (Object item : player.items) {
+                    System.out.println(item);
+                }
             }
             return nextLine();
         } else {
