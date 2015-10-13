@@ -1,8 +1,5 @@
 import java.util.Scanner;
 
-/**
- * Created by Agronis on 10/8/15.
- */
 public class A {
     public static void run() throws Exception {
         System.out.println("Welcome to TIY Bank - Please input name on account to continue.");

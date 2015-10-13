@@ -12,12 +12,15 @@ public class TA {
         System.out.println("Welcome to Ceres");
         player = new Player();
 
-        while (true) {
-            player.chooseName();
-            player.chooseWeapon();
-            player.chooseArea();
-            player.findItem("Satchel");
-        }
+
+        player.chooseName();
+        player.chooseWeapon();
+        player.chooseArea();
+        player.findItem("Satchel");
+
+        Enemy ogre = new Enemy("Ogre", 120, 20);
+        player.Battle(ogre);
+
     }
 
     // Initiating a console command & loop.
