@@ -1,7 +1,6 @@
 import java.util.ArrayList;
 
-public class Player extends Char {
-    String weapon;
+public class Player extends Character {
     String area;
     ArrayList items = new ArrayList();
 
@@ -13,7 +12,7 @@ public class Player extends Char {
     // Player states their name.
     public void  chooseName() {
         System.out.println("Hey! What's your name!?");
-        name = TA.nextLine();
+        name = Game.nextLine();
         System.out.println("Oh, " + name + "? You're the guy I keep hearing about..");
     }
 
@@ -22,15 +21,23 @@ public class Player extends Char {
         System.out.println("Choose a weapon - you'll need it.");
         System.out.println("[1] Pick up a sword.");
         System.out.println("[2] Pick up a mallet.");
-        weapon = TA.nextLine();
-        int weaponNum = Integer.valueOf(weapon);
+        int weaponNum = Integer.valueOf(Game.nextLine());
         if (weaponNum == 1) {
             System.out.println("A little dull but it'll have to do.");
+            weapon = new Weapon();
+            weapon.name = "Sword";
+            weapon.damage = 10;
         } else if (weaponNum == 2) {
             System.out.println("Prefer to bludgeon, huh? Sicko..");
+            weapon = new Weapon();
+            weapon.name = "Mallet";
+            weapon.damage = 10;
         } else {
             throw new Exception("Maybe it wasn't obvious, just choose a number.");
         }
+
+        System.out.println(String.format("That's a fine %s", weapon.name.toLowerCase()));
+
     }
 
     // Player chooses an area.
@@ -38,7 +45,7 @@ public class Player extends Char {
         System.out.println("Pick your path to death.");
         System.out.println("[1] Enter the forest.");
         System.out.println("[2] Enter the barren canyon.");
-        area = TA.nextLine();
+        area = Game.nextLine();
         int areaNum = Integer.valueOf(area);
         if (areaNum == 1) {
             System.out.println("Go play in the forest you fairy!");
@@ -52,7 +59,7 @@ public class Player extends Char {
     // When a player finds an item & option to add to inventory.
     void findItem(String item) {
         System.out.println("Found a new item! Do you want to pick it up?? [Y/N]");
-        String s = TA.nextLine();
+        String s = Game.nextLine();
         if (s.equals("Y")) {
             System.out.println("You found a " + item);
             items.add(item);

@@ -2,7 +2,7 @@ import com.sun.tools.doclets.formats.html.SourceToHTMLConverter;
 
 import java.util.Scanner;
 
-public class TA {
+public class Game {
 
     static Player player;
 
@@ -18,7 +18,11 @@ public class TA {
         player.chooseArea();
         player.findItem("Satchel");
 
-        Enemy ogre = new Enemy("Ogre", 120, 20);
+        Weapon ogreWeapon = new Weapon();
+        ogreWeapon.name = "Club";
+        ogreWeapon.damage = 5;
+        Enemy ogre = new Enemy("Ogre", 120, 20, ogreWeapon);
+
         player.Battle(ogre);
 
     }
