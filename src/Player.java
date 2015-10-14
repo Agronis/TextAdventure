@@ -5,7 +5,7 @@ public class Player extends Character {
     ArrayList items = new ArrayList();
 
     public Player() {
-        health = 100;
+        health = 500;
         damage = 20;
     }
 
