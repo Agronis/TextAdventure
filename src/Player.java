@@ -10,7 +10,7 @@ public class Player extends Character {
     }
 
     // Player states their name.
-    public void  chooseName() {
+    public void chooseName() {
         System.out.println("Hey! What's your name!?");
         name = Game.nextLine();
         System.out.println("Oh, " + name + "? You're the guy I keep hearing about..");
