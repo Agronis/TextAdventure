@@ -17,12 +17,14 @@ public class Game {
         System.out.println("Welcome to Ceres");
         player = loadGame();
 
+        player.findItem("Satchel");
+        player.findItem("Shield");
+
         if (player == null) {
             player = new Player();
             player.chooseName();
             player.chooseWeapon();
             player.chooseArea();
-            player.findItem("Satchel");
         }
 
         Weapon ogreWeapon = new Weapon();
@@ -49,7 +51,7 @@ public class Game {
                 if (player.items.size() == 1) {
                     System.out.println("You have no items.");
                 }
-                for (Object item : player.items) {
+                for (String item : player.items) {
                     System.out.println(item);
                 }
             }
